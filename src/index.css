@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.left-side.clip-parallelogram {
+  clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+}
+.left-side .name-label {
+  @apply pr-5
+}
+.right-side.clip-parallelogram {
+  clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
+}
+.right-side .name-label {
+  @apply pl-5
+}
