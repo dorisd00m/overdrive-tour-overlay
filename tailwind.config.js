@@ -12,7 +12,7 @@ export default {
       fontFamily: {
         'anta': ["Anta", 'sans-serif'],
         'anton': ["Anton", 'sans-serif'],
-        'jersey': ["Jersey 10", 'sans-serif'],
+        'jersey-10': ['"Jersey 10"', 'sans-serif'],
         'digital': ["digital-7", 'sans-serif'],
       },
     },
