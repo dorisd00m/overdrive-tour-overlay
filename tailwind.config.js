@@ -8,7 +8,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'anta': ["Anta", 'sans-serif'],
+        'anton': ["Anton", 'sans-serif'],
+        'jersey': ["Jersey 10", 'sans-serif'],
+        'digital': ["digital-7", 'sans-serif'],
+      },
+    },
   },
   plugins: [
     addDynamicIconSelectors(),

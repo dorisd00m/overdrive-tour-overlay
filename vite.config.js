@@ -5,7 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/overdrive-tour-overlay', // Ganti dengan nama repo
-  server: {
-    port: 3535
-  }
+  
 })
