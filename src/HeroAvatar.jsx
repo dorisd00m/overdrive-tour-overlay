@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { img } from "framer-motion/client";
 
 const data = [
+    { name: "DEFAULT", src: "Default.gif", x: 0, y: 0 },
     { name: "XIANGLIYAO", src: "XiangliYao.gif", x: 60, y: 30 },
     { name: "YINLIN", src: "Yinlin.gif", x: 90, y: 30 },
     { name: "YOUHU", src: "Youhu.gif", x: 60, y: 30 },
@@ -104,11 +105,21 @@ const HeroAvatar = ({ side, src, charName, x, y, banned, className,idx }) => {
                         />
                     </AnimatePresence>
                                                             
-                <div className="bg-black/80 w-full absolute bottom-0 left-0 h-8 flex justify-center name-label items-center uppercase text-xs z-40">
-                    {charName == "XIANGLIYAO" ? "XIANGLI YAO" : charName || "Xiangli Yao"}
-                </div>
+                    <AnimatePresence mode="wait">
+                    {charName !== "DEFAULT" &&
+                            <motion.div
+                                key={charName}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                exit={{opacity: 0}}
+                                transition={{ duration: .5, delay: .5, ease: "easeInOut" }}
+                                className="bg-black/80 w-full absolute bottom-0 left-0 h-8 flex justify-center name-label items-center uppercase text-xs z-40">
+                                {charName == "XIANGLIYAO" ? "XIANGLI YAO" : charName || "Xiangli Yao"}
+                            </motion.div>
+                    }
+                    </AnimatePresence>
                 {banned && (
-                    <div className="absolute left-0 top-0 w-full h-full bg-red-600/40 flex items-center justify-center">
+                    <div className="absolute left-0 top-0 w-full h-full bg-red-600/40 flex items-center justify-center z-[30]">
                         <span className="icon-[nimbus--forbidden] text-red-600 size-[30px]"></span>
                     </div>
                 )}

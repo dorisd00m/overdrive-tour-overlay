@@ -298,12 +298,12 @@ function App() {
           <Route path="/battle-name" element={
             <>
               <div className="flex flex-col gap-5 w-[300px]">
-                <div className='text-left'>
+                <div className='text-left uppercase'>
                   {dataBattle[1] ?dataBattle[1]?.map((item, id) => {
                     if (id == 0) {
-                      return <div key={id} className='font-jersey-10 text-white text-4xl'>{item}</div>
+                      return <div key={id} className='font-jersey-10 text-white text-3xl'>{item}</div>
                     }
-                  }) : <div className='font-jersey-10 text-white text-4xl'>--</div>}
+                  }) : <div className='font-jersey-10 text-white text-3xl'>--</div>}
                 </div>
                 <div className="relative p-1 rounded-full bg-gradient-to-r from-gray-400 to-gray-400 w-fit">
                   <div className="w-full p-1 bg-black rounded-full">
@@ -377,12 +377,12 @@ function App() {
                     }
                   </div>                  
                 </div>
-                <div className='text-right'>
+                <div className='text-right uppercase'>
                   {dataBattle[2] ? dataBattle[2]?.map((item, id) => {
                     if (id == 0) {
-                      return <div key={id} className='font-jersey-10 text-white text-4xl'>{item}</div>
+                      return <div key={id} className='font-jersey-10 text-white text-3xl'>{item}</div>
                     }
-                  }) : <div  className='font-jersey-10 text-white text-4xl'>--</div>}
+                  }) : <div  className='font-jersey-10 text-white text-3xl'>--</div>}
                 </div>
               </div>
             </>
