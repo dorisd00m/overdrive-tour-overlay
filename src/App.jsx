@@ -7,9 +7,6 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import RegisterChar from './RegisterChar'
 import PotraitChar from './PotraitChar'
 
-import win0 from '../public/win-0.svg'
-import win1 from '../public/win-1.svg'
-
 function App() {
   
   const [count, setCount] = useState(0)
@@ -317,20 +314,20 @@ function App() {
                           <div key={id} className='flex gap-1'>
                             {item == 0 && 
                               <>
-                                <img src={win0} alt="" />
-                                <img src={win0} alt="" />
+                                <img src={'./win-0.svg'} alt="" />
+                                <img src={'./win-0.svg'} alt="" />
                               </>
                             }
                             {item == 1 && 
                               <>
-                                <img src={win1} alt="" />
-                                <img src={win0} alt="" />
+                                <img src={'./win-1.svg'} alt="" />
+                                <img src={'./win-0.svg'} alt="" />
                               </>
                             }
                             {item == 2 && 
                               <>
-                                <img src={win1} alt="" />
-                                <img src={win1} alt="" />
+                                <img src={'./win-1.svg'} alt="" />
+                                <img src={'./win-1.svg'} alt="" />
                               </>
                             }
                           </div>
@@ -338,8 +335,8 @@ function App() {
                       }
                     }) : 
                       <div className='flex gap-1'>                                              
-                        <img src={win0} alt="" />
-                        <img src={win0} alt="" />                                               
+                        <img src={'./win-0.svg'} alt="" />
+                        <img src={'./win-0.svg'} alt="" />                                               
                       </div>
                     }
                   </div>                  
@@ -353,20 +350,20 @@ function App() {
                           <div key={id} className='flex gap-1'>
                             {item == 0 &&
                               <>
-                                <img src={win0} alt="" />
-                                <img src={win0} alt="" />
+                                <img src={'./win-0.svg'} alt="" />
+                                <img src={'./win-0.svg'} alt="" />
                               </>
                             }
                             {item == 1 &&
                               <>
-                                <img src={win1} alt="" />
-                                <img src={win0} alt="" />
+                                <img src={'./win-1.svg'} alt="" />
+                                <img src={'./win-0.svg'} alt="" />
                               </>
                             }
                             {item == 2 &&
                               <>
-                                <img src={win1} alt="" />
-                                <img src={win1} alt="" />
+                                <img src={'./win-1.svg'} alt="" />
+                                <img src={'./win-1.svg'} alt="" />
                               </>
                             }
                           </div>
@@ -374,8 +371,8 @@ function App() {
                       }
                     }) :
                       <div className='flex gap-1'>
-                        <img src={win0} alt="" />
-                        <img src={win0} alt="" />
+                        <img src={'./win-0.svg'} alt="" />
+                        <img src={'./win-0.svg'} alt="" />
                       </div>
                     }
                   </div>                  

@@ -37,7 +37,7 @@ const data = [
 ];
 
 const HeroAvatar = ({ side, src, charName, x, y, banned, className,idx }) => {
-    const [CurrentData, setCurrentData] = useState();
+    const [CurrentData, setCurrentData] = useState({ name: "XIANGLIYAO", src: "XiangliYao.gif", x: 60, y: 30 });
 
     const checkAvatar = () => {
         const current = data?.filter((item) => item.name == charName);
@@ -60,7 +60,7 @@ const HeroAvatar = ({ side, src, charName, x, y, banned, className,idx }) => {
     };
 
     return (
-        <AnimatePresence>
+        
             <div
                 className={clsx(
                     side === "left" ? "left-side" : "right-side",
@@ -68,21 +68,43 @@ const HeroAvatar = ({ side, src, charName, x, y, banned, className,idx }) => {
                     className
                 )}
             >
-                
-                    
-                    <motion.img
-                        key={charName}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 2, ease: "easeInOut" }} // Durasi 0.3 detik dengan easing smooth
-                        src={(CurrentData && "/overdrive-tour-overlay/char/" + CurrentData.src || "/overdrive-tour-overlay/char/XiangliYao.gif")}
-                        className="absolute w-full h-full object-cover"
-                        style={{ objectPosition: `${CurrentData?.x}% ${CurrentData?.y}%` || "60% 30%" }}
-                        alt=""
-                    />
+                    <AnimatePresence mode="wait">
+                        <motion.img
+                            key={charName}
+                            initial={{ y: 0 }}
+                            animate={{ y: -150 }}
+                            exit={{ y: 0 }}
+                            src='/overdrive-tour-overlay/GATE1.png'  
+                            transition={{ duration: 1, ease: "easeInOut" }} // Durasi 0.3 detik dengan easing smooth
+                            className="w-[220px]  top-[-80px] left-0 right-0 mx-auto object-bottom absolute z-50"
+                        />
+                    </AnimatePresence>
+                    <AnimatePresence mode="wait">
+                        <motion.img
+                            key={charName}
+                            initial={{ opacity: 0 }}
+                            animate={{  opacity: 1}}
+                            exit={{  opacity: 0}}
+                            transition={{ duration: .5, delay: .2, ease: "easeInOut" }} 
+                            src={(CurrentData && "/overdrive-tour-overlay/char/" + CurrentData.src || "/overdrive-tour-overlay/char/XiangliYao.gif")}
+                            className="absolute w-full h-full object-cover top-0 left-0 z-20"
+                            style={{ objectPosition: `${CurrentData?.x}% ${CurrentData?.y}%` || "60% 30%" }}
+                            alt=""
+                        />
+                    </AnimatePresence>
+                    <AnimatePresence mode="wait">
+                        <motion.img
+                            key={charName}
+                            initial={{ y: -20 }}
+                            animate={{ y: 250 }}
+                            exit={{ y: -20 }}
+                            src='/overdrive-tour-overlay/GATE2.png'
+                            transition={{ duration: 1, ease: "easeInOut" }} // Durasi 0.3 detik dengan easing smooth
+                            className="w-[220px] top-[30px] left-0 absolute object-bottom z-50"
+                        />
+                    </AnimatePresence>
                                                             
-                <div className="bg-black/80 w-full absolute bottom-0 left-0 h-8 flex justify-center name-label items-center uppercase text-xs">
+                <div className="bg-black/80 w-full absolute bottom-0 left-0 h-8 flex justify-center name-label items-center uppercase text-xs z-40">
                     {charName == "XIANGLIYAO" ? "XIANGLI YAO" : charName || "Xiangli Yao"}
                 </div>
                 {banned && (
@@ -91,7 +113,7 @@ const HeroAvatar = ({ side, src, charName, x, y, banned, className,idx }) => {
                     </div>
                 )}
             </div>
-        </AnimatePresence>
+        
     );
 };
 
